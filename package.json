@@ -3,7 +3,8 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "vite build",
+        "build": "bash scripts/vercel-build.sh",
+        "build:static": "php scripts/build-static.php",
         "dev": "vite"
     },
     "devDependencies": {

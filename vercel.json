@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "",
+  "buildCommand": "bash scripts/vercel-build.sh",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/projects/vms", "destination": "/projects/vms/index.html" },
+    { "source": "/projects/connect", "destination": "/projects/connect/index.html" },
+    { "source": "/projects/fleet", "destination": "/projects/fleet/index.html" },
+    { "source": "/projects/re-actions", "destination": "/projects/re-actions/index.html" }
+  ]
+}
