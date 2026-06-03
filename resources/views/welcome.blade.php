@@ -479,7 +479,7 @@
         .marquee {
             display: flex;
             width: max-content;
-            animation: marquee 32s linear infinite;
+            animation: marquee 70s linear infinite;
         }
         .marquee span {
             flex-shrink: 0;
@@ -1088,10 +1088,10 @@
         <div class="marquee-wrap" aria-hidden="true">
             <div class="marquee">
                 @foreach (range(1, 2) as $marqueeRepeat)
-                    <span>Backend · APIs · System analysis · Business-aligned solutions —</span>
-                    <span>Backend · APIs · System analysis · Business-aligned solutions —</span>
-                    <span>Backend · APIs · System analysis · Business-aligned solutions —</span>
-                    <span>Backend · APIs · System analysis · Business-aligned solutions —</span>
+                    <span>Backend Developer · Business Analysis Enthusiast · API Development · Requirement Analysis · System Optimization ·</span>
+                    <span>Backend Developer · Business Analysis Enthusiast · API Development · Requirement Analysis · System Optimization ·</span>
+                    <span>Backend Developer · Business Analysis Enthusiast · API Development · Requirement Analysis · System Optimization ·</span>
+                    <span>Backend Developer · Business Analysis Enthusiast · API Development · Requirement Analysis · System Optimization ·</span>
                 @endforeach
             </div>
         </div>
