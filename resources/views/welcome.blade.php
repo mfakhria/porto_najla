@@ -1334,7 +1334,7 @@
                     <span class="cert-box__label">Language</span>
                     <h3>English · Business Communication</h3>
                     <ul class="cert-list">
-                        <li><a href="https://drive.google.com/drive/home" rel="noopener noreferrer" target="_blank">English for Business Communication</a></li>
+                        <li><a href="https://drive.google.com/file/d/1aF6H4E7CuFyrerfCgmzH6gwyYd1zBlm4/view?usp=sharing" rel="noopener noreferrer" target="_blank">English for Business Communication</a></li>
                     </ul>
                 </div>
 
