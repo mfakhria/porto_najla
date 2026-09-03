@@ -1,70 +1,23 @@
 # Deploy to Vercel
 
-Portfolio ini **bukan** static HTML biasa — Blade perlu di-export dulu ke folder `dist/`.
+Portfolio aktif adalah Vite + React dan dapat dibangun langsung oleh Vercel tanpa PHP atau export Blade.
 
-## Kenapa error "No Output Directory named dist"?
+## Build settings
 
-1. **Vercel tidak punya PHP** di server build — tidak bisa render Blade.
-2. **`vercel.json` harus ada di GitHub** — kalau belum di-push, Vercel pakai preset Vite/Node dan cari folder `dist` dari `npm run build` (gagal).
+- Install command: `npm install`
+- Build command: `npm run build`
+- Output directory: `dist`
 
-Solusi: **GitHub Actions** build dengan PHP → export ke `dist/` → deploy ke Vercel.
-
----
-
-## Setup (sekali saja)
-
-### 1. Token Vercel
-1. https://vercel.com/account/tokens → **Create Token**
-2. Copy token
-
-### 2. ID project
-Di folder project (lokal), jalankan:
-```bash
-npx vercel link
-```
-Lalu buka file `.vercel/project.json` — catat `orgId` dan `projectId`.
-
-Atau: Vercel Dashboard → Project → **Settings** → General → Project ID / Team ID.
-
-### 3. GitHub Secrets
-Repo GitHub → **Settings** → **Secrets and variables** → **Actions** → **New repository secret**:
-
-| Name | Value |
-|------|--------|
-| `VERCEL_TOKEN` | token dari langkah 1 |
-| `VERCEL_ORG_ID` | orgId |
-| `VERCEL_PROJECT_ID` | projectId |
-
-### 4. Matikan auto-deploy Vercel (disarankan)
-Vercel Dashboard → Project → **Settings** → **Git** → **Ignored Build Step**  
-Atau nonaktifkan deploy otomatis supaya hanya GitHub Action yang deploy (build PHP jalan di GitHub, bukan di Vercel).
-
-Alternatif: biarkan auto-deploy, tapi deploy yang sukses akan dari **Actions** setelah secrets diset.
-
----
+Konfigurasi tersebut sudah tersedia di `vercel.json`.
 
 ## Deploy otomatis
 
-Setiap `git push` ke `main` → GitHub Action:
-1. Install PHP + Composer
-2. `php scripts/build-static.php` → folder `dist/`
-3. Deploy ke Vercel
+Tambahkan `VERCEL_TOKEN`, `VERCEL_ORG_ID`, dan `VERCEL_PROJECT_ID` pada GitHub Actions secrets. Setiap push ke `main` akan menjalankan workflow deployment.
 
----
-
-## Build lokal (opsional)
+## Verifikasi lokal
 
 ```bash
-composer install
-php scripts/build-static.php
+npm install
+npm run build
+npm run preview
 ```
-
-Hasil ada di `dist/` — bisa di-preview dengan static server.
-
----
-
-## Catatan
-
-- **GitHub Pages (`github.io`)** tetap tidak bisa menjalankan Laravel.
-- **Render** (Docker) = Laravel penuh; **Vercel** = versi static (cukup untuk portfolio ini).
-- Setelah ubah `welcome.blade.php`, push ke GitHub — Action akan rebuild otomatis.

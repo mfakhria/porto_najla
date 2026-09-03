@@ -1,27 +1,14 @@
-FROM php:8.3-cli-bookworm
-
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    git \
-    unzip \
-    libzip-dev \
-    && docker-php-ext-install zip opcache \
-    && rm -rf /var/lib/apt/lists/*
-
-COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+FROM node:22-alpine
 
 WORKDIR /app
 
-COPY composer.json composer.lock ./
-RUN composer install --no-dev --no-scripts --no-autoloader --prefer-dist
+COPY package.json package-lock.json ./
+RUN npm ci --include=dev
 
 COPY . .
+RUN npm run build
 
-RUN composer dump-autoload --optimize \
-    && mkdir -p storage/framework/{sessions,views,cache} storage/logs bootstrap/cache \
-    && chmod -R 775 storage bootstrap/cache
+ENV PORT=4173
+EXPOSE 4173
 
-ENV PORT=8000
-
-EXPOSE 8000
-
-CMD php artisan serve --host=0.0.0.0 --port=${PORT}
+CMD ["sh", "-c", "npm run preview -- --host 0.0.0.0 --port ${PORT}"]

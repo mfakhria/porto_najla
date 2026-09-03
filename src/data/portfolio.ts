@@ -1,0 +1,131 @@
+export type Project = {
+  id: string;
+  title: string;
+  eyebrow: string;
+  summary: string;
+  role: string;
+  period: string;
+  image: string;
+  tags: string[];
+  contributions: string[];
+  link?: { label: string; href: string };
+};
+
+export const projects: Project[] = [
+  {
+    id: "vms",
+    title: "Vendor Management System",
+    eyebrow: "CKL · Logistics platform",
+    summary: "A centralized platform that streamlines vendor operations, from onboarding and management to purchase order creation for mid-mile logistics.",
+    role: "Backend Developer",
+    period: "Aug 2025 — Present",
+    image: "/images/projects/vms-showcase.png",
+    tags: ["PHP", "Laravel", "APIs", "PostgreSQL"],
+    contributions: ["Production logistics APIs and server-side workflows", "SQL-driven operational data processing", "Translation of business requirements into backend solutions"],
+    link: { label: "Visit sandbox", href: "https://sandbox.vendor.cklcargo.com/" },
+  },
+  {
+    id: "connect",
+    title: "CKL Connect",
+    eyebrow: "CKL · Multi-agent shipping",
+    summary: "A shipping operations platform for invoicing, domestic and international pricing, parcel tracking, and role-based team management.",
+    role: "Backend Developer",
+    period: "Aug 2025 — Present",
+    image: "/images/projects/ckl-connect-showcase.png",
+    tags: ["Backend", "PHP", "APIs", "SQL"],
+    contributions: ["APIs for invoicing, pricing, and parcel lifecycle tracking", "Live foreign-exchange rate integration", "Role-based access for owners, admins, and staff"],
+    link: { label: "Visit website", href: "https://sandbox.ckl-connect.cklcargo.com/login" },
+  },
+  {
+    id: "fleet",
+    title: "Fleet Management System",
+    eyebrow: "CKL · Fleet operations",
+    summary: "A logistics backend for registering trucks and drivers, planning delivery trips, running quality checks, and monitoring delivery execution.",
+    role: "Backend Developer",
+    period: "Aug 2025 — Present",
+    image: "/images/projects/fms-showcase.png",
+    tags: ["Backend", "PHP", "APIs", "Logistics"],
+    contributions: ["Fleet, driver, and vehicle registration APIs", "Route, checkpoint, and quality-check workflows", "Web operations and driver mobile-app integration"],
+    link: { label: "Visit website", href: "https://sandbox.fleet.cklcargo.com/login" },
+  },
+  {
+    id: "re-actions",
+    title: "Re-Actions",
+    eyebrow: "Government · Public service",
+    summary: "A public complaint management system for Tangerang City, supporting report intake, lifecycle tracking, and operational data analysis.",
+    role: "Fullstack Developer",
+    period: "Jul 2024 — Dec 2024",
+    image: "/images/projects/re-actions-showcase.png",
+    tags: ["CodeIgniter 4", "MySQL", "JavaScript", "Government"],
+    contributions: ["Complaint forms, validation, and status workflows", "Data visualization and reporting interfaces", "Database design and SQL queries for analysis"],
+  },
+  {
+    id: "wearshare",
+    title: "WearShare",
+    eyebrow: "Bangkit · Mobile & machine learning",
+    summary: "An Android application that analyzes donated clothing images to help charitable organizations determine whether each item is suitable for use.",
+    role: "Mobile Developer",
+    period: "Feb 2024 — Jun 2024",
+    image: "/images/projects/wearshare-showcase.png",
+    tags: ["Kotlin", "Android", "Machine Learning", "TFLite"],
+    contributions: ["Android mobile application development", "On-device clothing image classification", "Capstone collaboration across learning paths"],
+    link: { label: "View repository", href: "https://github.com/C241-PS306/mobile-development" },
+  },
+  {
+    id: "catty-holic",
+    title: "Catty Holic",
+    eyebrow: "Figma · Mobile UI",
+    summary: "A mobile product concept for cat health consultations and adoption, designed as an interactive end-to-end prototype in Figma.",
+    role: "UI/UX Designer",
+    period: "Selected academic work",
+    image: "/images/projects/catty-holic-showcase.png",
+    tags: ["Figma", "UI/UX", "Mobile", "Prototype"],
+    contributions: ["User-focused mobile information architecture", "Veterinary consultation and adoption journeys", "Interactive high-fidelity prototype"],
+    link: { label: "Open prototype", href: "https://www.figma.com/proto/SFfqJAUHqUNtUFhNENbapN/cattyhollic?type=design&node-id=1-6&t=DcG3bd8DzdbhiCSL-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A6&show-proto-sidebar=1&mode=design" },
+  },
+];
+
+export const experiences = [
+  {
+    period: "August 2025 — Present",
+    organization: "CKL Cargo",
+    role: "Web Developer",
+    context: "Industry · Logistics",
+    description: "Responsible for server-side logic, APIs, and data layers that support day-to-day operations, turning complex supply-chain workflows into reliable backend systems.",
+  },
+  {
+    period: "July 2024 — December 2024",
+    organization: "Dinas Komunikasi dan Informatika",
+    role: "Fullstack Developer",
+    context: "Government · Public service",
+    description: "Built web applications, data workflows, and user-facing features supporting government digital services in Tangerang City.",
+  },
+  {
+    period: "February 2024 — June 2024",
+    organization: "Bangkit Academy",
+    role: "Mobile Developer Cohort",
+    context: "Academy · Intensive program",
+    description: "Completed an Android-focused program led by Google, Tokopedia, Gojek, and Traveloka, culminating in a collaborative capstone product.",
+  },
+];
+
+export const certifications = [
+  { group: "National certification", title: "Software Engineer — BNSP", href: "https://drive.google.com/file/d/1vV4yh5klz4aL3trnNSSX9GcE6bngQE63/view?usp=sharing" },
+  { group: "Language", title: "English for Business Communication", href: "https://drive.google.com/file/d/1aF6H4E7CuFyrerfCgmzH6gwyYd1zBlm4/view?usp=sharing" },
+  { group: "Bangkit Academy", title: "Programming Basics for Software Developers", href: "https://www.dicoding.com/certificates/KEXL8N9V4ZG2" },
+  { group: "Bangkit Academy", title: "Programming Logic 101", href: "https://www.dicoding.com/certificates/NVP77396RPR0" },
+  { group: "Bangkit Academy", title: "Git Basics with GitHub", href: "https://www.dicoding.com/certificates/JLX12RLE2Z72" },
+  { group: "Bangkit Academy", title: "Web Front-End for Beginners", href: "https://www.dicoding.com/certificates/JMZVDVVQJZN9" },
+  { group: "Bangkit Academy", title: "Getting Started with Kotlin", href: "https://www.dicoding.com/certificates/GRX5QEVYYZ0M" },
+  { group: "Bangkit Academy", title: "Android Applications for Beginners", href: "https://www.dicoding.com/certificates/MRZM83MQRZYQ" },
+  { group: "Bangkit Academy", title: "Android Application Fundamentals", href: "https://www.dicoding.com/certificates/ERZR19KV2ZYV" },
+  { group: "Bangkit Academy", title: "SOLID Programming Principles", href: "https://www.dicoding.com/certificates/MEPJNRJDLX3V" },
+  { group: "Bangkit Academy", title: "AI Basics", href: "https://www.dicoding.com/certificates/KEXL14YOMXG2" },
+  { group: "Bangkit Academy", title: "Machine Learning for Android", href: "https://www.dicoding.com/certificates/MRZMED52NPYQ" },
+];
+
+export const contact = {
+  email: "najlaputriafifah16@gmail.com",
+  linkedin: "https://www.linkedin.com/in/najla-putri-afifah",
+  github: "https://github.com/C241-PS306/mobile-development",
+};
