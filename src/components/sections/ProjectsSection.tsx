@@ -10,7 +10,9 @@ const parallaxItems = [
 
 export function ProjectsSection() {
   return (
-    <section data-theme="projects" id="projects" className="relative bg-bg-base text-fg-primary">
+    <section data-theme="projects" id="projects" className="relative overflow-hidden bg-bg-base text-fg-primary">
+      <div aria-hidden className="absolute -left-32 top-56 size-96 rounded-full bg-accent-secondary/20 blur-3xl" />
+      <div aria-hidden className="absolute -right-40 top-[38%] size-[30rem] rounded-full bg-accent-primary/20 blur-3xl" />
       <div className="container-shell relative z-10 pt-28 text-center md:pt-36">
         <Reveal>
           <p className="section-kicker">Selected work · 01</p>
@@ -21,10 +23,10 @@ export function ProjectsSection() {
 
       <ZoomParallax items={parallaxItems} />
 
-      <div className="container-shell grid gap-5 pb-32 md:grid-cols-2 lg:pb-40">
+      <div className="container-shell relative z-20 grid gap-5 pb-32 md:-mt-[14vh] md:grid-cols-2 lg:pb-40">
         {projects.map((project, index) => (
           <Reveal key={project.id} delay={(index % 2) * .08}>
-            <article id={`project-${project.id}`} className="project-card group overflow-hidden rounded-[1.5rem] border border-border-subtle bg-bg-elevated">
+            <article id={`project-${project.id}`} className="project-card soft-shadow group overflow-hidden rounded-[1.75rem] border border-border-subtle bg-bg-elevated transition duration-500 hover:-translate-y-1 hover:border-border-strong">
               <div className="aspect-[16/10] overflow-hidden border-b border-border-subtle">
                 <img src={project.image} alt={`${project.title} interface`} loading="lazy" className="project-image h-full w-full object-cover" />
               </div>
@@ -34,7 +36,7 @@ export function ProjectsSection() {
                   <span className="font-display text-2xl text-fg-muted/40">0{index + 1}</span>
                 </div>
                 <p className="mt-5 leading-7 text-fg-muted">{project.summary}</p>
-                <div className="mt-5 flex flex-wrap gap-2">{project.tags.map((tag) => <span key={tag} className="rounded-full border border-border-subtle px-3 py-1.5 text-[11px] font-semibold text-fg-muted">{tag}</span>)}</div>
+                <div className="mt-5 flex flex-wrap gap-2">{project.tags.map((tag) => <span key={tag} className="rounded-full border border-border-subtle bg-accent-primary/10 px-3 py-1.5 text-[11px] font-semibold text-fg-muted">{tag}</span>)}</div>
                 <details className="mt-6 border-t border-border-subtle pt-5">
                   <summary className="cursor-pointer list-none text-sm font-semibold text-fg-primary marker:hidden">Case study details <span className="float-right text-accent-primary">+</span></summary>
                   <div className="mt-5 grid gap-5 text-sm text-fg-muted">

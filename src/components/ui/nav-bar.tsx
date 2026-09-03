@@ -35,7 +35,7 @@ export function NavBar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: .25, duration: .65 }}
         className={cn(
-          "fixed left-1/2 top-5 z-50 hidden -translate-x-1/2 items-center border border-border-subtle bg-bg-elevated/75 text-fg-primary shadow-2xl shadow-black/30 backdrop-blur-xl transition-all duration-500 md:flex",
+          "fixed left-1/2 top-5 z-50 hidden -translate-x-1/2 items-center border border-border-subtle bg-bg-elevated/75 text-fg-primary shadow-[0_12px_38px_rgba(112,80,108,.14)] backdrop-blur-xl transition-all duration-500 md:flex",
           scrolled ? "gap-6 rounded-full px-5 py-2.5" : "gap-9 rounded-[1.35rem] px-7 py-3.5",
         )}
       >
@@ -49,7 +49,7 @@ export function NavBar() {
       <button
         type="button"
         onClick={() => setOpen((value) => !value)}
-        className="fixed right-4 top-4 z-[70] grid size-12 place-items-center rounded-full bg-accent-primary text-accent-on shadow-xl md:hidden"
+        className="fixed right-4 top-4 z-[70] grid size-12 place-items-center rounded-full bg-bg-contrast text-fg-inverted shadow-[0_12px_30px_rgba(112,80,108,.2)] md:hidden"
         aria-expanded={open}
         aria-label={open ? "Close navigation" : "Open navigation"}
       >
@@ -64,10 +64,12 @@ export function NavBar() {
             animate={{ opacity: 1, clipPath: "circle(150% at calc(100% - 40px) 40px)" }}
             exit={{ opacity: 0, clipPath: "circle(0% at calc(100% - 40px) 40px)" }}
             transition={{ duration: .55, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-[60] flex flex-col justify-between bg-bg-base p-6 text-fg-primary md:hidden"
+            className="fixed inset-0 z-[60] flex flex-col justify-between overflow-hidden bg-bg-base p-6 text-fg-primary md:hidden"
           >
+            <div aria-hidden className="pastel-orb absolute -left-16 top-1/4 size-52 rounded-full bg-accent-primary/25" />
+            <div aria-hidden className="pastel-orb absolute -right-20 bottom-1/4 size-64 rounded-full bg-accent-secondary/35" />
             <a href="#home" onClick={() => setOpen(false)} className="font-display text-3xl">Najla.</a>
-            <nav className="flex flex-col gap-3">
+            <nav className="relative flex flex-col gap-3">
               {links.map((link, index) => (
                 <motion.a key={link.href} href={link.href} onClick={() => setOpen(false)} initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .12 + index * .06 }} className="font-display text-6xl leading-none tracking-tight hover:text-accent-primary">
                   {link.label}

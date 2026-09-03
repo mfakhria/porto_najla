@@ -20,13 +20,19 @@ function App() {
     return () => window.clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    if (loading || !window.location.hash) return;
+    const target = document.getElementById(window.location.hash.slice(1));
+    window.requestAnimationFrame(() => target?.scrollIntoView({ behavior: "auto" }));
+  }, [loading]);
+
   return (
     <>
       <Loader visible={loading} />
       <NavBar />
       <main>
         <HeroSection />
-        <div className="overflow-hidden border-y border-white/10 bg-accent-primary py-3 text-accent-on">
+        <div className="overflow-hidden border-y border-border-subtle bg-gradient-to-r from-accent-primary via-accent-secondary to-accent-primary py-3 text-accent-on">
           <div className="marquee-track flex gap-10 whitespace-nowrap text-xs font-bold uppercase tracking-[.18em]">
             {[0, 1].map((copy) => <span key={copy}>Backend Development · API Development · Requirement Analysis · System Optimization · Business Analysis · Project Collaboration · Backend Development · API Development · Requirement Analysis · System Optimization · Business Analysis · Project Collaboration ·</span>)}
           </div>

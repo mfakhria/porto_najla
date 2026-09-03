@@ -11,7 +11,9 @@ export function Loader({ visible }: { visible: boolean }) {
           transition={{ duration: 0.65 }}
           className="fixed inset-0 z-[100] flex items-center justify-center bg-bg-base px-6 text-fg-primary"
         >
-          <div className="text-center">
+          <div aria-hidden className="pastel-orb absolute left-[12%] top-[18%] size-32 rounded-[45%_55%_60%_40%] bg-accent-primary/30 sm:size-48" />
+          <div aria-hidden className="pastel-orb absolute bottom-[16%] right-[10%] size-28 rounded-[60%_40%_45%_55%] bg-accent-secondary/45 sm:size-44" />
+          <div className="relative text-center">
             <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mb-5 text-xs font-semibold uppercase tracking-[.28em] text-accent-primary">
               Portfolio · 2026
             </motion.p>
@@ -23,7 +25,7 @@ export function Loader({ visible }: { visible: boolean }) {
             >
               Hello, I’m Najla.
             </motion.h1>
-            <div className="mx-auto mt-8 h-px w-56 overflow-hidden bg-white/10">
+            <div className="mx-auto mt-8 h-px w-56 overflow-hidden bg-border-subtle">
               <motion.div className="h-full bg-accent-primary" initial={{ x: "-100%" }} animate={{ x: 0 }} transition={{ duration: 2.35, ease: "easeInOut" }} />
             </div>
             <motion.p initial={{ opacity: 0 }} animate={{ opacity: 0.65 }} transition={{ delay: .5 }} className="mt-5 text-sm text-fg-muted">

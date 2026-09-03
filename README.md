@@ -1,6 +1,6 @@
 # Najla Putri Afifah — Portfolio
 
-A cinematic, dark portfolio rebuilt with React 19, TypeScript, Vite 8, Tailwind CSS v4, and Framer Motion.
+A cinematic, bright feminine pastel portfolio built with React 19, TypeScript, Vite 8, Tailwind CSS v4, and Framer Motion.
 
 ## Run locally
 

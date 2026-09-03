@@ -9,7 +9,7 @@ const socials = [
 
 export function SocialDock() {
   return (
-    <aside data-theme="nav" className="fixed bottom-6 left-1/2 z-50 hidden -translate-x-1/2 items-center gap-1 rounded-2xl border border-border-subtle bg-bg-elevated/80 p-1.5 shadow-2xl shadow-black/40 backdrop-blur-xl md:flex">
+    <aside data-theme="nav" className="fixed bottom-6 left-1/2 z-50 hidden -translate-x-1/2 items-center gap-1 rounded-2xl border border-border-subtle bg-bg-elevated/80 p-1.5 shadow-[0_14px_40px_rgba(112,80,108,.18)] backdrop-blur-xl md:flex">
       {socials.map(({ label, href, icon: Icon }) => (
         <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" aria-label={label} className="group relative grid size-10 place-items-center rounded-xl text-fg-muted transition hover:bg-accent-primary/10 hover:text-accent-primary">
           <Icon size={18} />

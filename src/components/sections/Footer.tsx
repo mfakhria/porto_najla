@@ -3,8 +3,9 @@ import { contact } from "@/data/portfolio";
 
 export function Footer() {
   return (
-    <footer data-theme="projects" id="contact" className="relative overflow-hidden bg-bg-base pt-28 pb-8 text-fg-primary md:pt-40">
-      <div className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[70vw] -translate-x-1/2 rounded-full bg-accent-primary/20 blur-[130px]" />
+    <footer data-theme="projects" id="contact" className="relative overflow-hidden border-t border-border-subtle bg-bg-base pt-28 pb-8 text-fg-primary md:pt-40">
+      <div className="pointer-events-none absolute left-1/3 top-0 h-[420px] w-[60vw] -translate-x-1/2 rounded-full bg-accent-primary/35 blur-[130px]" />
+      <div className="pointer-events-none absolute right-0 bottom-0 h-[360px] w-[44vw] rounded-full bg-accent-secondary/35 blur-[120px]" />
       <div className="container-shell relative">
         <p className="section-kicker text-center">Contact · 06</p>
         <h2 className="mx-auto mt-6 max-w-5xl text-center font-display text-[clamp(4rem,10vw,9rem)] leading-[.8] tracking-[-.05em]">Let’s build something<br /><em className="text-accent-primary">that matters.</em></h2>
