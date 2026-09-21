@@ -30,21 +30,24 @@ export function ProjectsSection() {
               <div className="aspect-[16/10] overflow-hidden border-b border-border-subtle">
                 <img src={project.image} alt={`${project.title} interface`} loading="lazy" className="project-image h-full w-full object-cover" />
               </div>
-              <div className="p-6 md:p-8">
-                <div className="flex items-start justify-between gap-5">
-                  <div><p className="section-kicker">{project.eyebrow}</p><h3 className="mt-3 font-display text-4xl tracking-tight">{project.title}</h3></div>
-                  <span className="font-display text-2xl text-fg-muted/40">0{index + 1}</span>
+              <div className="p-5 md:p-7">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="min-w-0">
+                    <p className="section-kicker">{project.eyebrow}</p>
+                    <h3 className="mt-2.5 font-display text-[1.65rem] leading-[1.15] tracking-tight md:text-[1.9rem]">{project.title}</h3>
+                  </div>
+                  <span className="shrink-0 font-display text-xl text-fg-muted/35 md:text-2xl">0{index + 1}</span>
                 </div>
-                <p className="mt-5 leading-7 text-fg-muted">{project.summary}</p>
-                <div className="mt-5 flex flex-wrap gap-2">{project.tags.map((tag) => <span key={tag} className="rounded-full border border-border-subtle bg-accent-primary/10 px-3 py-1.5 text-[11px] font-semibold text-fg-muted">{tag}</span>)}</div>
-                <details className="mt-6 border-t border-border-subtle pt-5">
+                <p className="mt-4 text-sm leading-6 text-fg-muted md:text-[0.95rem] md:leading-7">{project.summary}</p>
+                <div className="mt-4 flex flex-wrap gap-2">{project.tags.map((tag) => <span key={tag} className="rounded-full border border-border-subtle bg-accent-primary/10 px-3 py-1.5 text-[11px] font-semibold text-fg-muted">{tag}</span>)}</div>
+                <details className="mt-5 border-t border-border-subtle pt-4">
                   <summary className="cursor-pointer list-none text-sm font-semibold text-fg-primary marker:hidden">Case study details <span className="float-right text-accent-primary">+</span></summary>
-                  <div className="mt-5 grid gap-5 text-sm text-fg-muted">
+                  <div className="mt-4 grid gap-4 text-sm text-fg-muted">
                     <p><span className="text-fg-primary">{project.role}</span> · {project.period}</p>
-                    <ul className="grid gap-2">{project.contributions.map((item) => <li key={item} className="flex gap-2"><span className="text-accent-primary">—</span>{item}</li>)}</ul>
+                    <ul className="grid gap-2">{project.contributions.map((item) => <li key={item} className="flex gap-2 leading-6"><span className="text-accent-primary">—</span>{item}</li>)}</ul>
                   </div>
                 </details>
-                {project.link && <a href={project.link.href} target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-accent-primary hover:underline">{project.link.label} <ArrowUpRight size={15} /></a>}
+                {project.link && <a href={project.link.href} target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-accent-primary hover:underline">{project.link.label} <ArrowUpRight size={15} /></a>}
               </div>
             </article>
           </Reveal>

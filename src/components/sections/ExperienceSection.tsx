@@ -13,13 +13,21 @@ export function ExperienceSection() {
           <p className="max-w-xl self-end text-lg leading-8 text-fg-muted md:justify-self-end">Industry, government, and an intensive academy cohort shaped a perspective that moves comfortably between backend systems, user needs, and business workflows.</p>
         </Reveal>
 
-        <div className="mt-20 grid gap-4">
+        <div className="mt-16 grid gap-3">
           {experiences.map((experience, index) => (
             <Reveal key={experience.organization} delay={index * .08}>
-              <article className="soft-shadow group grid gap-6 rounded-[1.75rem] border border-border-subtle bg-bg-elevated/85 p-7 transition duration-500 hover:-translate-y-1 hover:border-border-strong md:grid-cols-[80px_1fr_1fr] md:items-start md:p-10">
-                <span className="grid size-12 place-items-center rounded-full bg-accent-primary/25 font-display text-2xl text-fg-primary">0{index + 1}</span>
-                <div><p className="text-xs font-semibold uppercase tracking-[.14em] text-fg-muted">{experience.context}</p><h3 className="mt-2 font-display text-4xl leading-none md:text-5xl">{experience.organization}</h3><p className="mt-3 font-semibold">{experience.role}</p></div>
-                <div><p className="mb-4 text-xs font-bold uppercase tracking-wider">{experience.period}</p><p className="leading-7 text-fg-muted">{experience.description}</p><ArrowDownRight className="mt-5 transition-transform group-hover:translate-x-1 group-hover:translate-y-1" size={22} /></div>
+              <article className="soft-shadow group grid gap-5 rounded-[1.5rem] border border-border-subtle bg-bg-elevated/85 p-6 transition duration-500 hover:-translate-y-1 hover:border-border-strong md:grid-cols-[64px_1fr_1.1fr] md:items-start md:gap-6 md:p-8">
+                <span className="grid size-11 place-items-center rounded-full bg-accent-primary/25 font-display text-xl text-fg-primary">0{index + 1}</span>
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[.14em] text-fg-muted">{experience.context}</p>
+                  <h3 className="mt-2 font-display text-[1.85rem] leading-[1.05] tracking-tight md:text-[2.15rem]">{experience.organization}</h3>
+                  <p className="mt-2 text-sm font-semibold">{experience.role}</p>
+                </div>
+                <div>
+                  <p className="mb-3 text-[10px] font-bold uppercase tracking-wider text-fg-muted">{experience.period}</p>
+                  <p className="text-sm leading-7 text-fg-muted md:text-[0.95rem]">{experience.description}</p>
+                  <ArrowDownRight className="mt-4 transition-transform group-hover:translate-x-1 group-hover:translate-y-1" size={20} />
+                </div>
               </article>
             </Reveal>
           ))}

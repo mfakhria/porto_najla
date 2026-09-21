@@ -13,6 +13,24 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: "digilog",
+    title: "Digilog (Digital Logistic)",
+    eyebrow: "CKL · Order Management System",
+    summary: "Cargo operations core for CKL—an Order Management System covering the shipment lifecycle from master data and orders to bagging and manifests across airfreight, FTL, and LTL.",
+    role: "Backend Developer",
+    period: "Aug 2025 — Present",
+    image: "/images/projects/digilog-showcase.jpg",
+    tags: ["PHP", "Laravel", "APIs", "Redis"],
+    contributions: [
+      "Designed REST APIs for the shipment lifecycle: master data, order agreements and routes, orders, bagging, and manifests (airfreight, FTL, LTL), including printouts, audit history, and business rules that prevent invalid operational changes",
+      "Implemented authentication and authorization for web and mobile: JWT, refresh tokens, OTP, SSO, password recovery, feature-based privileges, special access, and location/customer-scoped permissions",
+      "Delivered high-volume workflows: bulk Excel upload/validation, invalid-row export, and asynchronous dashboard/bagging-process exports via Redis queues with live progress (Laravel Reverb)",
+      "Exposed partner APIs (Laravel Sanctum) for external order and bagging intake, with mapping, background processing, status tracking, and API audit logs",
+      "Integrated AWS S3, Firebase Cloud Messaging, HRIS employee data, and cross-schema reads from warehouse, fleet, and vendor systems for operational dashboards",
+    ],
+    link: { label: "Visit website", href: "https://digilog.cklcargo.com/login" },
+  },
+  {
     id: "vms",
     title: "Vendor Management System",
     eyebrow: "CKL · Logistics platform",
@@ -21,8 +39,13 @@ export const projects: Project[] = [
     period: "Aug 2025 — Present",
     image: "/images/projects/vms-showcase.png",
     tags: ["PHP", "Laravel", "APIs", "PostgreSQL"],
-    contributions: ["Production logistics APIs and server-side workflows", "SQL-driven operational data processing", "Translation of business requirements into backend solutions"],
-    link: { label: "Visit sandbox", href: "https://sandbox.vendor.cklcargo.com/" },
+    contributions: [
+      "Built vendor onboarding and verification for public and private vendors, including document handling, revision, and status workflows",
+      "Implemented commercial modules: quotations (FTL, LTL, container, rent car), rate catalogs, SPH export, vendor requests, and costing (airfreight, LTL, trip budget) with bulk upload/replace and history",
+      "Developed purchasing and fulfillment: purchase orders, approval/verification/payment flow, FTL/LTL/rent-car/container fulfillment, standby handling, and OTP generation for container trips",
+      "Added vendor evaluation dashboards (FTL, LTL, rent car) and fleet replacement-request workflows, plus FMS integration to sync fulfillment items, fleet, and driver changes",
+    ],
+    link: { label: "Visit website", href: "https://vendor.cklcargo.com/" },
   },
   {
     id: "connect",
@@ -44,9 +67,14 @@ export const projects: Project[] = [
     role: "Backend Developer",
     period: "Aug 2025 — Present",
     image: "/images/projects/fms-showcase.png",
-    tags: ["Backend", "PHP", "APIs", "Logistics"],
-    contributions: ["Fleet, driver, and vehicle registration APIs", "Route, checkpoint, and quality-check workflows", "Web operations and driver mobile-app integration"],
-    link: { label: "Visit website", href: "https://sandbox.fleet.cklcargo.com/login" },
+    tags: ["PHP", "Laravel", "APIs", "Redis"],
+    contributions: [
+      "Developed APIs for fleets, drivers, containers, checkpoints, movements, toolkits, quality control, and internal SLA",
+      "Built trip management: assign delivery orders, vendor fulfillments, drivers, and fleets; record movements/checkpoints; handle manual transport, file changes, and fleet/driver changes with full history",
+      "Delivered driver-facing DIDO APIs (start/end trip, check-in, help-wanted, issue resolve, file upload) and a separate trip-container auth flow for vendor container trips",
+      "Implemented fleet monitoring, trip-issue monitoring with summary/export, replacement requests, and rent-car prorate, including health/metrics endpoints for deployment",
+    ],
+    link: { label: "Visit website", href: "https://fleet.cklcargo.com/login" },
   },
   {
     id: "re-actions",
@@ -127,5 +155,5 @@ export const certifications = [
 export const contact = {
   email: "najlaputriafifah16@gmail.com",
   linkedin: "https://www.linkedin.com/in/najla-putri-afifah",
-  github: "https://github.com/C241-PS306/mobile-development",
+  github: "https://github.com/najlaput16",
 };

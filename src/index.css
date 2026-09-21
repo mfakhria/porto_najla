@@ -95,7 +95,7 @@ a { color: inherit; }
 ::selection { background: #f3a9c4; color: #4b3341; }
 
 .container-shell { width: min(1180px, calc(100% - 2rem)); margin-inline: auto; }
-.section-kicker { color: var(--sem-accent-primary); font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+.section-kicker { color: color-mix(in srgb, var(--sem-accent-primary) 42%, var(--sem-fg-primary)); font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
 .display-title { font-family: "Instrument Serif", serif; font-size: clamp(3.25rem, 8vw, 7rem); line-height: .88; letter-spacing: -.045em; }
 .grid-field {
   background-image: linear-gradient(to right, rgba(122,88,119,.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(122,88,119,.07) 1px, transparent 1px);

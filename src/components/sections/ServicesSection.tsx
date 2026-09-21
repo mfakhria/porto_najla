@@ -21,21 +21,43 @@ export function ServicesSection() {
           <p className="max-w-lg text-fg-muted md:justify-self-end">A backend foundation with a growing focus on business analysis and project management—useful where technical systems must make sense to the people running them.</p>
         </Reveal>
 
-        <div className="mt-16 grid gap-10 lg:grid-cols-[1fr_.8fr] lg:items-center">
+        <div className="mt-16 grid gap-10 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
           <div>
             {capabilities.map((item, index) => (
-              <button key={item.title} type="button" onMouseEnter={() => setActive(index)} onFocus={() => setActive(index)} onClick={() => setActive(index)} className="group flex w-full items-center justify-between border-b border-border-subtle py-5 text-left">
-                <span><span className={`font-display text-4xl tracking-tight transition md:text-6xl ${active === index ? "text-accent-primary" : "text-fg-primary/30 group-hover:text-fg-primary"}`}>{item.title}</span><span className={`mt-2 block text-xs text-fg-muted transition ${active === index ? "opacity-100" : "opacity-0"}`}>{item.subtitle}</span></span>
-                <span className="text-sm text-fg-muted">0{index + 1}</span>
+              <button
+                key={item.title}
+                type="button"
+                onMouseEnter={() => setActive(index)}
+                onFocus={() => setActive(index)}
+                onClick={() => setActive(index)}
+                className="group flex w-full items-center justify-between gap-4 border-b border-border-subtle py-4 text-left md:py-5"
+              >
+                <span className="min-w-0">
+                  <span
+                    className={`font-display text-[1.65rem] tracking-tight transition md:text-[2.1rem] ${
+                      active === index ? "text-accent-primary" : "text-fg-primary/35 group-hover:text-fg-primary"
+                    }`}
+                  >
+                    {item.title}
+                  </span>
+                  <span
+                    className={`mt-1.5 block max-w-md text-xs leading-5 text-fg-muted transition ${
+                      active === index ? "opacity-100" : "opacity-0"
+                    }`}
+                  >
+                    {item.subtitle}
+                  </span>
+                </span>
+                <span className="shrink-0 text-xs text-fg-muted">0{index + 1}</span>
               </button>
             ))}
           </div>
-          <div className="soft-shadow relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-border-subtle bg-bg-elevated">
+          <div className="soft-shadow relative aspect-[4/5] overflow-hidden rounded-[1.75rem] border border-border-subtle bg-bg-elevated md:aspect-[5/6]">
             <AnimatePresence mode="wait">
               <motion.img key={capabilities[active].image} src={capabilities[active].image} alt={capabilities[active].title} initial={{ opacity: 0, scale: 1.08, clipPath: "inset(100% 0 0 0)" }} animate={{ opacity: 1, scale: 1, clipPath: "inset(0 0 0 0)" }} exit={{ opacity: 0 }} transition={{ duration: .65 }} className="absolute inset-0 h-full w-full object-cover" />
             </AnimatePresence>
             <div className="absolute inset-0 bg-gradient-to-t from-bg-contrast/90 via-transparent to-transparent" />
-            <p className="absolute bottom-6 left-6 right-6 font-display text-3xl text-fg-inverted">{capabilities[active].subtitle}</p>
+            <p className="absolute bottom-6 left-6 right-6 font-display text-2xl leading-snug text-fg-inverted md:text-3xl">{capabilities[active].subtitle}</p>
           </div>
         </div>
       </div>
