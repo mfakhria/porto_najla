@@ -59,7 +59,7 @@ export function SkillsSection() {
           </p>
         </Reveal>
 
-        <div className="mx-auto mt-20 grid h-[380px] max-w-4xl grid-cols-4 items-end gap-3 md:mt-24 md:h-[410px] md:gap-5">
+        <div className="mx-auto mt-16 grid max-w-4xl grid-cols-2 items-end gap-3 sm:mt-20 md:mt-24 md:h-[410px] md:grid-cols-4 md:gap-5">
           {skills.map((skill, index) => (
             <Reveal key={skill.name} delay={index * 0.08} className="flex h-full flex-col justify-end">
               <div className="mb-3 min-h-9 text-center text-[10px] font-semibold uppercase tracking-wider text-fg-muted md:text-xs">
@@ -69,7 +69,7 @@ export function SkillsSection() {
               <motion.div
                 whileHover={{ y: -6 }}
                 transition={{ type: "spring", stiffness: 320, damping: 24 }}
-                className="soft-shadow relative h-[280px] overflow-hidden rounded-[1.75rem] border border-border-subtle md:h-[320px]"
+                className="soft-shadow relative h-[220px] overflow-hidden rounded-[1.35rem] border border-border-subtle sm:h-[260px] md:h-[320px] md:rounded-[1.75rem]"
               >
                 <div className="candy-bg absolute inset-0" />
 

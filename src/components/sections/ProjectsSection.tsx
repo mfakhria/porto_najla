@@ -10,7 +10,7 @@ const parallaxItems = [
 
 export function ProjectsSection() {
   return (
-    <section data-theme="projects" id="projects" className="relative overflow-hidden bg-bg-base text-fg-primary">
+    <section data-theme="projects" id="projects" className="relative overflow-x-hidden bg-bg-base text-fg-primary">
       <div aria-hidden className="absolute -left-32 top-56 size-96 rounded-full bg-accent-secondary/20 blur-3xl" />
       <div aria-hidden className="absolute -right-40 top-[38%] size-[30rem] rounded-full bg-accent-primary/20 blur-3xl" />
       <div className="container-shell relative z-10 pt-28 text-center md:pt-36">
@@ -23,7 +23,7 @@ export function ProjectsSection() {
 
       <ZoomParallax items={parallaxItems} />
 
-      <div className="container-shell relative z-20 grid gap-5 pb-32 md:-mt-[14vh] md:grid-cols-2 lg:pb-40">
+      <div className="container-shell relative z-20 grid gap-5 pb-28 md:-mt-[14vh] md:grid-cols-2 md:pb-32 lg:pb-40">
         {projects.map((project, index) => (
           <Reveal key={project.id} delay={(index % 2) * .08}>
             <article id={`project-${project.id}`} className="project-card soft-shadow group overflow-hidden rounded-[1.75rem] border border-border-subtle bg-bg-elevated transition duration-500 hover:-translate-y-1 hover:border-border-strong">
